@@ -7,9 +7,7 @@ app.get("/", (req, res) => {
   res.send("This is Home Page");
 });
 
-app.get("/product", (req, res) => {
-  res.send("This is Product Page");
-});
+
 
 app.get("/order", (req, res) => {
   res.send("This is order Page");
