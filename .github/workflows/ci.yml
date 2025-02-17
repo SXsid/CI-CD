@@ -2,7 +2,8 @@ name: Ci of the project
 
 on:
   pull_request:
-    branches: -master
+    branches:
+      - main
 jobs:
   build:
     name: Build nodejs app
@@ -17,7 +18,7 @@ jobs:
         uses: actions/setup-node@v3
 
       - name: Install dependecies
-        uses: npm install
+        run: npm install
 
       - name: build the ts proj to js
-        uses: npm run build
+        run: npm run build
