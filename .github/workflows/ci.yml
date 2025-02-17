@@ -1,0 +1,23 @@
+name: Ci of the project
+
+on:
+  pull_request:
+    branches: -master
+jobs:
+  build:
+    name: Build nodejs app
+    runs-on: ubuntu-latest
+
+    steps:
+      # it will give awareness of out sys code to github server
+      - name: checkout code
+        uses: actions/checkout@v3
+
+      - name: setup Nodejs
+        uses: actions/setup-node@v3
+
+      - name: Install dependecies
+        uses: npm install
+
+      - name: build the ts proj to js
+        uses: npm run build
